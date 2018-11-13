@@ -67,8 +67,8 @@ const (
 )
 
 const (
-	BUY    = "b"
-	SELL   = "s"
+	BUY    = "buy"
+	SELL   = "sell"
 	MARKET = "m"
 	LIMIT  = "l"
 )
