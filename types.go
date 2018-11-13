@@ -64,6 +64,8 @@ const (
 	XZECXXBT = "XZECXXBT"
 	XZECZEUR = "XZECZEUR"
 	XZECZUSD = "XZECZUSD"
+
+	XBT = "XBT"
 )
 
 const (
