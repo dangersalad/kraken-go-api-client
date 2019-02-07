@@ -318,6 +318,14 @@ type TickerResponse struct {
 	XZECZUSD PairTickerInfo
 }
 
+// DepositMethodsResponse is the response type of a DepositMethods query to the Kraken API.
+type DepositMethodsResponse []struct {
+	Method     string  `json:"method"`
+	Limit      bool    `json:"limit"`
+	Fee        float64 `json:"fee,string"`
+	GenAddress bool    `json:"gen-address"`
+}
+
 // DepositAddressesResponse is the response type of a DepositAddresses query to the Kraken API.
 type DepositAddressesResponse []struct {
 	Address  string `json:"address"`
