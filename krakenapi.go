@@ -304,7 +304,7 @@ func (api *Client) QueryOrders(txids string, args map[string]string) (*QueryOrde
 	return resp.(*QueryOrdersResponse), nil
 }
 
-// QueryTrades shows order
+// QueryTrades gets the info for a set of trades
 func (api *Client) QueryTrades(txids []string, args map[string]string) (QueryTradesResponse, error) {
 	txidList := strings.Join(txids, ",")
 	params := url.Values{"txid": {txidList}}
