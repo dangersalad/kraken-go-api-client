@@ -8,71 +8,132 @@ import (
 )
 
 const (
-	BCHEUR   = "BCHEUR"
-	BCHUSD   = "BCHUSD"
-	BCHXBT   = "BCHXBT"
-	DASHEUR  = "DASHEUR"
-	DASHUSD  = "DASHUSD"
-	DASHXBT  = "DASHXBT"
-	EOSETH   = "EOSETH"
-	EOSEUR   = "EOSEUR"
-	EOSUSD   = "EOSUSD"
-	EOSXBT   = "EOSXBT"
-	GNOETH   = "GNOETH"
-	GNOEUR   = "GNOEUR"
-	GNOUSD   = "GNOUSD"
-	GNOXBT   = "GNOXBT"
+	// BCHEUR is a trading pair
+	BCHEUR = "BCHEUR"
+	// BCHUSD is a trading pair
+	BCHUSD = "BCHUSD"
+	// BCHXBT is a trading pair
+	BCHXBT = "BCHXBT"
+	// DASHEUR is a trading pair
+	DASHEUR = "DASHEUR"
+	// DASHUSD is a trading pair
+	DASHUSD = "DASHUSD"
+	// DASHXBT is a trading pair
+	DASHXBT = "DASHXBT"
+	// EOSETH is a trading pair
+	EOSETH = "EOSETH"
+	// EOSEUR is a trading pair
+	EOSEUR = "EOSEUR"
+	// EOSUSD is a trading pair
+	EOSUSD = "EOSUSD"
+	// EOSXBT is a trading pair
+	EOSXBT = "EOSXBT"
+	// GNOETH is a trading pair
+	GNOETH = "GNOETH"
+	// GNOEUR is a trading pair
+	GNOEUR = "GNOEUR"
+	// GNOUSD is a trading pair
+	GNOUSD = "GNOUSD"
+	// GNOXBT is a trading pair
+	GNOXBT = "GNOXBT"
+	// USDTZUSD is a trading pair
 	USDTZUSD = "USDTZUSD"
+	// XETCXETH is a trading pair
 	XETCXETH = "XETCXETH"
+	// XETCXXBT is a trading pair
 	XETCXXBT = "XETCXXBT"
+	// XETCZEUR is a trading pair
 	XETCZEUR = "XETCZEUR"
+	// XETCXUSD is a trading pair
 	XETCXUSD = "XETCXUSD"
+	// XETHXXBT is a trading pair
 	XETHXXBT = "XETHXXBT"
+	// XETHZCAD is a trading pair
 	XETHZCAD = "XETHZCAD"
+	// XETHZEUR is a trading pair
 	XETHZEUR = "XETHZEUR"
+	// XETHZGBP is a trading pair
 	XETHZGBP = "XETHZGBP"
+	// XETHZJPY is a trading pair
 	XETHZJPY = "XETHZJPY"
+	// XETHZUSD is a trading pair
 	XETHZUSD = "XETHZUSD"
+	// XICNXETH is a trading pair
 	XICNXETH = "XICNXETH"
+	// XICNXXBT is a trading pair
 	XICNXXBT = "XICNXXBT"
+	// XLTCXXBT is a trading pair
 	XLTCXXBT = "XLTCXXBT"
+	// XLTCZEUR is a trading pair
 	XLTCZEUR = "XLTCZEUR"
+	// XLTCZUSD is a trading pair
 	XLTCZUSD = "XLTCZUSD"
+	// XMLNXETH is a trading pair
 	XMLNXETH = "XMLNXETH"
+	// XMLNXXBT is a trading pair
 	XMLNXXBT = "XMLNXXBT"
+	// XREPXETH is a trading pair
 	XREPXETH = "XREPXETH"
+	// XREPXXBT is a trading pair
 	XREPXXBT = "XREPXXBT"
+	// XREPZEUR is a trading pair
 	XREPZEUR = "XREPZEUR"
+	// XREPZUSD is a trading pair
 	XREPZUSD = "XREPZUSD"
+	// XXBTZCAD is a trading pair
 	XXBTZCAD = "XXBTZCAD"
+	// XXBTZEUR is a trading pair
 	XXBTZEUR = "XXBTZEUR"
+	// XXBTZGBP is a trading pair
 	XXBTZGBP = "XXBTZGBP"
+	// XXBTZJPY is a trading pair
 	XXBTZJPY = "XXBTZJPY"
+	// XXBTZUSD is a trading pair
 	XXBTZUSD = "XXBTZUSD"
+	// XXDGXXBT is a trading pair
 	XXDGXXBT = "XXDGXXBT"
+	// XXLMXXBT is a trading pair
 	XXLMXXBT = "XXLMXXBT"
+	// XXLMZEUR is a trading pair
 	XXLMZEUR = "XXLMZEUR"
+	// XXLMZUSD is a trading pair
 	XXLMZUSD = "XXLMZUSD"
+	// XXMRXXBT is a trading pair
 	XXMRXXBT = "XXMRXXBT"
+	// XXMRZEUR is a trading pair
 	XXMRZEUR = "XXMRZEUR"
+	// XXMRZUSD is a trading pair
 	XXMRZUSD = "XXMRZUSD"
+	// XXRPXXBT is a trading pair
 	XXRPXXBT = "XXRPXXBT"
+	// XXRPZCAD is a trading pair
 	XXRPZCAD = "XXRPZCAD"
+	// XXRPZEUR is a trading pair
 	XXRPZEUR = "XXRPZEUR"
+	// XXRPZJPY is a trading pair
 	XXRPZJPY = "XXRPZJPY"
+	// XXRPZUSD is a trading pair
 	XXRPZUSD = "XXRPZUSD"
+	// XZECXXBT is a trading pair
 	XZECXXBT = "XZECXXBT"
+	// XZECZEUR is a trading pair
 	XZECZEUR = "XZECZEUR"
+	// XZECZUSD is a trading pair
 	XZECZUSD = "XZECZUSD"
 
+	// XBT is bitcoin
 	XBT = "XBT"
 )
 
 const (
-	BUY    = "buy"
-	SELL   = "sell"
+	// BUY is a buy order type
+	BUY = "buy"
+	// SELL is a sell order type
+	SELL = "sell"
+	// MARKET is a market order type
 	MARKET = "m"
-	LIMIT  = "l"
+	// LIMIT is a limit order type
+	LIMIT = "l"
 )
 
 // KrakenResponse wraps the Kraken API JSON response
@@ -228,6 +289,7 @@ type AssetInfo struct {
 	DisplayDecimals int `json:"display_decimals"`
 }
 
+// BalanceResponse is a list of balances
 type BalanceResponse struct {
 	BCH  float64 `json:"BCH,string"`
 	DASH float64 `json:"DASH,string"`
@@ -462,26 +524,26 @@ type OrderBookItem struct {
 
 // UnmarshalJSON takes a json array from kraken and converts it into an OrderBookItem.
 func (o *OrderBookItem) UnmarshalJSON(data []byte) error {
-	tmp_struct := struct {
+	tmpStruct := struct {
 		price  string
 		amount string
 		ts     int64
 	}{}
-	tmp_arr := []interface{}{&tmp_struct.price, &tmp_struct.amount, &tmp_struct.ts}
-	err := json.Unmarshal(data, &tmp_arr)
+	tmpArr := []interface{}{&tmpStruct.price, &tmpStruct.amount, &tmpStruct.ts}
+	err := json.Unmarshal(data, &tmpArr)
 	if err != nil {
 		return err
 	}
 
-	o.Price, err = strconv.ParseFloat(tmp_struct.price, 64)
+	o.Price, err = strconv.ParseFloat(tmpStruct.price, 64)
 	if err != nil {
 		return err
 	}
-	o.Amount, err = strconv.ParseFloat(tmp_struct.amount, 64)
+	o.Amount, err = strconv.ParseFloat(tmpStruct.amount, 64)
 	if err != nil {
 		return err
 	}
-	o.Ts = tmp_struct.ts
+	o.Ts = tmpStruct.ts
 	return nil
 }
 
@@ -494,19 +556,23 @@ type OrderBook struct {
 	Bids []OrderBookItem
 }
 
+// OpenOrdersResponse is a list of open orders
 type OpenOrdersResponse struct {
 	Open  map[string]Order `json:"open"`
 	Count int              `json:"count"`
 }
 
+// AddOrderResponse is the response from adding an order
 type AddOrderResponse struct {
 	Description    OrderDescription `json:"descr"`
 	TransactionIds []string         `json:"txid"`
 }
 
+// CancelOrderResponse is the respsonse from cancelling an order
 type CancelOrderResponse struct {
 	Count   int  `json:"count"`
 	Pending bool `json:"pending"`
 }
 
+// QueryOrdersResponse is a map of orders
 type QueryOrdersResponse map[string]Order
