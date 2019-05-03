@@ -507,6 +507,7 @@ type Order struct {
 	OrderFlags     string           `json:"oflags"`
 	CloseTime      float64          `json:"closetm"`
 	Reason         string           `json:"reason"`
+	Trades         []string         `json:"trades"`
 }
 
 // Trade represents a songle trade

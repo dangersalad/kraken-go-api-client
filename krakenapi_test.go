@@ -169,3 +169,23 @@ func TestQueryTrades(t *testing.T) {
 	}
 
 }
+
+func TestQueryOrders(t *testing.T) {
+	// bypass this test if no key is specified
+	if privateAPI == nil {
+		t.Log("Bypassing private API test")
+		return
+	}
+	txids := []string{}
+	result, err := privateAPI.QueryOrders(txids, map[string]string{"trades": "true"})
+	if err != nil {
+		t.Errorf("QueryTrades should not return an errer, got %s", err)
+	}
+
+	resultType := reflect.TypeOf(result)
+
+	if resultType != reflect.TypeOf(QueryOrdersResponse{}) {
+		t.Errorf("QueryOrders should return a QueryOrdersResponse, got %s", resultType)
+	}
+
+}
