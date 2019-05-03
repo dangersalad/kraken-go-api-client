@@ -5,9 +5,21 @@ import (
 	"net/url"
 	"reflect"
 	"testing"
+	"time"
 )
 
+const apiKey = ""
+const apiSecret = ""
+
 var publicAPI = New("", "")
+
+var privateAPI *Client
+
+func init() {
+	if apiKey != "" {
+		privateAPI = New(apiKey, apiSecret)
+	}
+}
 
 func TestCreateSignature(t *testing.T) {
 	expectedSig := "Uog0MyIKZmXZ4/VFOh0g1u2U+A0ohuK8oCh0HFUiHLE2Csm23CuPCDaPquh/hpnAg/pSQLeXyBELpJejgOftCQ=="
@@ -91,8 +103,9 @@ func TestQueryTicker(t *testing.T) {
 	}
 }
 
-func TestQueryTrades(t *testing.T) {
-	result, err := publicAPI.Trades(XXBTZEUR, 1495777604391411290)
+func TestTrades(t *testing.T) {
+	refDate := time.Now().Add(time.Minute * -15).UnixNano()
+	result, err := publicAPI.Trades(XXBTZEUR, refDate)
 
 	if err != nil {
 		t.Errorf("Trades should not return an error, got %s", err)
@@ -135,4 +148,24 @@ func TestQueryDepth(t *testing.T) {
 	if len(result.Bids) > count {
 		t.Errorf("Bids length must be less than count , got %d > %d", len(result.Bids), count)
 	}
+}
+
+func TestQueryTrades(t *testing.T) {
+	// bypass this test if no key is specified
+	if privateAPI == nil {
+		t.Log("Bypassing private API test")
+		return
+	}
+	txids := []string{}
+	result, err := privateAPI.QueryTrades(txids, nil)
+	if err != nil {
+		t.Errorf("QueryTrades should not return an errer, got %s", err)
+	}
+
+	resultType := reflect.TypeOf(result)
+
+	if resultType != reflect.TypeOf(QueryTradesResponse{}) {
+		t.Errorf("QueryTrades should return a QueryTradesResponse, got %s", resultType)
+	}
+
 }

@@ -509,6 +509,21 @@ type Order struct {
 	Reason         string           `json:"reason"`
 }
 
+// Trade represents a songle trade
+type Trade struct {
+	OrderTxID string  `json:"ordertxid"`
+	Pair      string  `json:"pair"`
+	Time      float64 `json:"time"`
+	Type      string  `json:"type"`
+	OrderType string  `json:"ordertype"`
+	Price     float64 `json:"price,string"`
+	Cost      float64 `json:"cost,string"`
+	Fee       float64 `json:"fee,string"`
+	Volume    float64 `json:"vol,string"`
+	Margin    float64 `json:"margin,string"`
+	Misc      string  `json:"misc"`
+}
+
 // ClosedOrdersResponse represents a list of closed orders, indexed by id
 type ClosedOrdersResponse struct {
 	Closed map[string]Order `json:"closed"`
@@ -576,3 +591,6 @@ type CancelOrderResponse struct {
 
 // QueryOrdersResponse is a map of orders
 type QueryOrdersResponse map[string]Order
+
+// QueryTradesResponse is a map of trades
+type QueryTradesResponse map[string]Trade

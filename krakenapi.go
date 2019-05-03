@@ -183,10 +183,10 @@ func (api *Client) Trades(pair string, since int64) (*TradesResponse, error) {
 			Volume:        volumeString,
 			VolumeFloat:   volume,
 			Time:          int64(trade[2].(float64)),
-			Buy:           trade[3].(string) == BUY,
-			Sell:          trade[3].(string) == SELL,
-			Market:        trade[4].(string) == MARKET,
-			Limit:         trade[4].(string) == LIMIT,
+			Buy:           trade[3].(string) == "b",
+			Sell:          trade[3].(string) == "s",
+			Market:        trade[4].(string) == "m",
+			Limit:         trade[4].(string) == "l",
 			Miscellaneous: trade[5].(string),
 		}
 
@@ -302,6 +302,23 @@ func (api *Client) QueryOrders(txids string, args map[string]string) (*QueryOrde
 	}
 
 	return resp.(*QueryOrdersResponse), nil
+}
+
+// QueryTrades shows order
+func (api *Client) QueryTrades(txids []string, args map[string]string) (QueryTradesResponse, error) {
+	txidList := strings.Join(txids, ",")
+	params := url.Values{"txid": {txidList}}
+	if value, ok := args["trades"]; ok {
+		params.Add("trades", value)
+	}
+	resp, err := api.queryPrivate("QueryTrades", params, &QueryTradesResponse{})
+
+	if err != nil {
+		return nil, err
+	}
+
+	respPoint := resp.(*QueryTradesResponse)
+	return *respPoint, nil
 }
 
 // AddOrder adds new order
