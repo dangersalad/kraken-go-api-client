@@ -287,7 +287,7 @@ func (api *Client) CancelOrder(txid string) (*CancelOrderResponse, error) {
 }
 
 // QueryOrders shows order
-func (api *Client) QueryOrders(txids []string, args map[string]string) (*QueryOrdersResponse, error) {
+func (api *Client) QueryOrders(txids []string, args map[string]string) (QueryOrdersResponse, error) {
 	txidList := strings.Join(txids, ",")
 	params := url.Values{"txid": {txidList}}
 	if value, ok := args["trades"]; ok {
@@ -302,7 +302,8 @@ func (api *Client) QueryOrders(txids []string, args map[string]string) (*QueryOr
 		return nil, err
 	}
 
-	return resp.(*QueryOrdersResponse), nil
+	respPoint := resp.(*QueryOrdersResponse)
+	return *respPoint, nil
 }
 
 // QueryTrades gets the info for a set of trades
