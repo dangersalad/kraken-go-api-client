@@ -496,7 +496,7 @@ type Order struct {
 	StartTime      float64          `json:"starttm"`
 	ExpireTime     float64          `json:"expiretm"`
 	Description    OrderDescription `json:"descr"`
-	Volume         string           `json:"vol"`
+	Volume         float64          `json:"vol,string"`
 	VolumeExecuted float64          `json:"vol_exec,string"`
 	Cost           float64          `json:"cost,string"`
 	Fee            float64          `json:"fee,string"`
