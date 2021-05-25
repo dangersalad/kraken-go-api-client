@@ -38,6 +38,8 @@ const (
 	GNOXBT = "GNOXBT"
 	// USDTZUSD is a trading pair
 	USDTZUSD = "USDTZUSD"
+	// USDCUSD is a trading pair
+	USDCUSD = "USDCUSD"
 	// XETCXETH is a trading pair
 	XETCXETH = "XETCXETH"
 	// XETCXXBT is a trading pair
@@ -338,6 +340,7 @@ type TickerResponse struct {
 	GNOUSD   PairTickerInfo
 	GNOXBT   PairTickerInfo
 	USDTZUSD PairTickerInfo
+	USDCUSD  PairTickerInfo
 	XETCXETH PairTickerInfo
 	XETCXXBT PairTickerInfo
 	XETCZEUR PairTickerInfo
