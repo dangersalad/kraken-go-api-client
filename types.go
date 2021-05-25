@@ -318,6 +318,7 @@ type BalanceResponse struct {
 	ZJPY float64 `json:"ZJPY,string"`
 	ZKRW float64 `json:"ZKRW,string"`
 	ZUSD float64 `json:"ZUSD,string"`
+	USDC float64 `json:"USDC,string"`
 }
 
 // TickerResponse includes the requested ticker pairs
